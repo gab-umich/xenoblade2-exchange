@@ -1,0 +1,17 @@
+{
+  "shops": [
+    {
+      "shopName": "Central Exchange",
+      "area": "Goldmouth",
+      "nation": "Argentum Trade Guild",
+      "fileName": "GoldmouthCentralExchange.json"
+    },
+    {
+      "shopName": "Masnach Exchange",
+      "area": "Torigoth",
+      "nation": "Gormott Province",
+      "fileName": "TorigothMasnachExchange.json"
+    }
+  ],
+  "rawDirectory": "raw/"
+}
