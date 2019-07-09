@@ -5,22 +5,22 @@ import ExchangeGuide.data.ShopContent;
 import ExchangeGuide.loader.RawDataLoader;
 import ExchangeGuide.loader.ShopContentLoader;
 
-import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class Main {
 
     public static void main(String[] args) {
-	// write your code here
+        /* demonstration of java 8 Stream, and, more importantly, the interface we should implement to take advantage of
+           the Stream library
+         */
         RawDataLoader rawDataLoader = new RawDataLoader();
         List<Shop> shops = rawDataLoader.buildShopList();
-        List<ShopContent> shopContents = new ArrayList<>();
-        for (final Shop shop : shops) {
-            System.out.println("shop: ");
-            System.out.println(shop.toString());
-            ShopContentLoader shopContentLoader = new ShopContentLoader(shop);
-            shopContents.add(shopContentLoader.buildShopContent());
-        }
+        List<ShopContent> shopContents = shops.stream()
+                .peek(shop -> System.out.println("New Shop:\n" + shop.toString()))      // debug logging to stdout
+                .map(ShopContentLoader::new)                                            // build contentLoader
+                .map(ShopContentLoader::buildShopContent)                               // get recipes
+                .collect(Collectors.toList());                                          // collect to list
         System.out.println("Program Finished.");
     }
 }
