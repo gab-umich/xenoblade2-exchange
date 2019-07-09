@@ -3,14 +3,10 @@ package ExchangeGuide.data;
 import java.util.Objects;
 
 public class Material {
-    private final String name;
+    final String name;
 
     public Material(String name) {
         this.name = name;
-    }
-
-    public String getName() {
-        return name;
     }
 
     @Override

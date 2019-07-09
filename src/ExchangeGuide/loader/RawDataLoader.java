@@ -1,4 +1,5 @@
 package ExchangeGuide.loader;
+
 import ExchangeGuide.data.Shop;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -9,14 +10,15 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class RawDataLoader {
-
-    ObjectNode objectNode;
+    private static final String DEFAULT_SHOPINFO_FILE_PATH = "ShopInfo.json";
+    private static final String NOT_ARRAY_NODE = "Warning: ShopInfo is not formatted as an ArrayNode";
+    private ObjectNode objectNode;
 
     /**
      * Constructor, default to look up all shops specified by a "ShopInfo.json" file.
      */
     public RawDataLoader() {
-        this("ShopInfo.json");
+        this(DEFAULT_SHOPINFO_FILE_PATH);
     }
 
     /**
@@ -36,22 +38,24 @@ public class RawDataLoader {
     /**
      * Read the shop information and parse into respective Shop objects
      */
-    public List<Shop> getShopList(){
+    public List<Shop> buildShopList() {
         ArrayList<Shop> shops = new ArrayList<>();
         String rawDirectory = objectNode.get("rawDirectory").textValue();
         JsonNode shopsNode = objectNode.get("shops");
-        if (shopsNode.isArray()) {
-            for (final JsonNode shopNode : shopsNode) {
-                Shop shop = new Shop(
-                        shopNode.get("shopName").textValue(),
-                        shopNode.get("area").textValue(),
-                        shopNode.get("nation").textValue(),
-                        rawDirectory + shopNode.get("fileName").textValue()
-                );
-                shops.add(shop);
-            }
-            // shops.forEach();
+        if (!shopsNode.isArray()) {
+            System.out.println(NOT_ARRAY_NODE);
+            return shops;
+        }
+        for (final JsonNode shopNode : shopsNode) {
+            Shop shop = new Shop(
+                    shopNode.get("shopName").textValue(),
+                    shopNode.get("area").textValue(),
+                    shopNode.get("nation").textValue(),
+                    rawDirectory + shopNode.get("fileName").textValue()
+            );
+            shops.add(shop);
         }
         return shops;
     }
+
 }
