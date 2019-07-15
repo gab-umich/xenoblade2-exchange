@@ -1,0 +1,465 @@
+[
+  {
+    "shop": {
+      "shopName": "Central Exchange",
+      "area": "Goldmouth",
+      "nation": "Argentum Trade Guild",
+      "filePath": "raw/GoldmouthCentralExchange.json"
+    },
+    "recipes": [
+      {
+        "setName": "Fancy Rumble Spring",
+        "requiredMaterials": {
+          "Dark Gray Spring": 1,
+          "Fancy Bolt": 1,
+          "Rumble Part": 1
+        },
+        "reward": {
+          "gold": 300,
+          "boosters": {}
+        }
+      },
+      {
+        "setName": "Mystery Cross",
+        "requiredMaterials": {
+          "Dark Gray Spring": 1,
+          "Zigzag Shaft": 1
+        },
+        "reward": {
+          "gold": 400,
+          "boosters": {}
+        }
+      },
+      {
+        "setName": "Flame Flower",
+        "requiredMaterials": {
+          "Crimson Gear": 5,
+          "Zigzag Shaft": 2
+        },
+        "reward": {
+          "gold": 1300,
+          "boosters": {
+            "BRAVERY": 1,
+            "COMPASSION": 1
+          }
+        }
+      },
+      {
+        "setName": "Butterfly Blackring",
+        "requiredMaterials": {
+          "Butterfly Lens": 1,
+          "Giant's Black Rings": 4
+        },
+        "reward": {
+          "gold": 2600,
+          "boosters": {
+            "COMPASSION": 1
+          }
+        }
+      },
+      {
+        "setName": "Butterfly Board",
+        "requiredMaterials": {
+          "Butterfly Lens": 1,
+          "Moving Boards": 4
+        },
+        "reward": {
+          "gold": 2600,
+          "boosters": {
+            "JUSTICE": 1
+          }
+        }
+      },
+      {
+        "setName": "Good View Set",
+        "requiredMaterials": {
+          "Butterfly Lens": 1,
+          "Planet Spheres": 4
+        },
+        "reward": {
+          "gold": 2600,
+          "boosters": {
+            "BRAVERY": 1
+          }
+        }
+      },
+      {
+        "setName": "Photon Lens",
+        "requiredMaterials": {
+          "Butterfly Lens": 1,
+          "Photonic Coils": 4
+        },
+        "reward": {
+          "gold": 2600,
+          "boosters": {
+            "TRUTH": 1
+          }
+        }
+      },
+      {
+        "setName": "Butterfly Coil Board",
+        "requiredMaterials": {
+          "Butterfly Lens": 2,
+          "Moving Board": 6,
+          "Photonic Coil": 2
+        },
+        "reward": {
+          "gold": 6600,
+          "boosters": {
+            "JUSTICE": 1,
+            "COMPASSION": 1
+          }
+        }
+      },
+      {
+        "setName": "Luminous Art Set",
+        "requiredMaterials": {
+          "Butterfly Lens": 2,
+          "Photonic Coil": 2,
+          "Planet Sphere": 6
+        },
+        "reward": {
+          "gold": 6600,
+          "boosters": {
+            "BRAVERY": 1,
+            "TRUTH": 1
+          }
+        }
+      },
+      {
+        "setName": "Mysterious Circles",
+        "requiredMaterials": {
+          "Butterfly Lens": 2,
+          "Giant's Black Ring": 6,
+          "Photonic Coil": 2
+        },
+        "reward": {
+          "gold": 6600,
+          "boosters": {
+            "COMPASSION": 1,
+            "TRUTH": 1
+          }
+        }
+      },
+      {
+        "setName": "Precious Quartz",
+        "requiredMaterials": {
+          "Butterfly Lens": 1,
+          "Titan Quartz": 1
+        },
+        "reward": {
+          "gold": 12800,
+          "boosters": {
+            "JUSTICE": 1,
+            "COMPASSION": 1
+          }
+        }
+      },
+      {
+        "setName": "Fighter's Style",
+        "requiredMaterials": {
+          "Delta Vessels": 2,
+          "Thrones of the Militant": 2
+        },
+        "reward": {
+          "gold": 24200,
+          "boosters": {
+            "BRAVERY": 1,
+            "TRUTH": 1
+          }
+        }
+      },
+      {
+        "setName": "Ancient Training Set",
+        "requiredMaterials": {
+          "Throne of the Militant": 4,
+          "Zigzag Shaft": 5
+        },
+        "reward": {
+          "gold": 30400,
+          "boosters": {
+            "BRAVERY": 1,
+            "COMPASSION": 1
+          }
+        }
+      },
+      {
+        "setName": "Unknown Parts",
+        "requiredMaterials": {
+          "Delta Vessel": 4,
+          "Zigzag Shaft": 5
+        },
+        "reward": {
+          "gold": 30400,
+          "boosters": {
+            "BRAVERY": 1,
+            "JUSTICE": 1
+          }
+        }
+      },
+      {
+        "setName": "Zigzag Quartz",
+        "requiredMaterials": {
+          "Titan Quartz": 2,
+          "Zigzag Shaft": 5
+        },
+        "reward": {
+          "gold": 30400,
+          "boosters": {
+            "BRAVERY": 1,
+            "TRUTH": 1
+          }
+        }
+      },
+      {
+        "setName": "Cinq Set",
+        "requiredMaterials": {
+          "Ancient Salvaging Suit": 1,
+          "Delta Vessel": 5,
+          "Stratospheric Hoop": 1,
+          "Throne of the Militant": 5,
+          "Titan Quartz": 2
+        },
+        "reward": {
+          "gold": 160200,
+          "boosters": {
+            "JUSTICE": 1,
+            "TRUTH": 1
+          }
+        }
+      }
+    ]
+  },
+  {
+    "shop": {
+      "shopName": "Masnach Exchange",
+      "area": "Torigoth",
+      "nation": "Gormott Province",
+      "filePath": "raw/TorigothMasnachExchange.json"
+    },
+    "recipes": [
+      {
+        "setName": "Strong Snow Spring",
+        "requiredMaterials": {
+          "Locust Spring": 1,
+          "Snow Ring": 1,
+          "Strong Screw": 1
+        },
+        "reward": {
+          "gold": 300,
+          "boosters": {}
+        }
+      },
+      {
+        "setName": "Spiral Art",
+        "requiredMaterials": {
+          "Helix Tube": 1,
+          "Strong Screw": 1
+        },
+        "reward": {
+          "gold": 400,
+          "boosters": {}
+        }
+      },
+      {
+        "setName": "Helix Jungle Gear",
+        "requiredMaterials": {
+          "Helix Tubes": 2,
+          "Jungle Frames": 3,
+          "Winding Gears": 2
+        },
+        "reward": {
+          "gold": 1400,
+          "boosters": {
+            "COMPASSION": 1,
+            "TRUTH": 1
+          }
+        }
+      },
+      {
+        "setName": "Gormott Chain",
+        "requiredMaterials": {
+          "Chain of Keys": 4,
+          "Gormott Head": 1
+        },
+        "reward": {
+          "gold": 2600,
+          "boosters": {
+            "COMPASSION": 1
+          }
+        }
+      },
+      {
+        "setName": "Gormott Mirror",
+        "requiredMaterials": {
+          "Gormott Head": 1,
+          "Trick Mirrors": 4
+        },
+        "reward": {
+          "gold": 2600,
+          "boosters": {
+            "BRAVERY": 1
+          }
+        }
+      },
+      {
+        "setName": "Gormott Plate",
+        "requiredMaterials": {
+          "Gormott Head": 1,
+          "Lost Glyph Plates": 4
+        },
+        "reward": {
+          "gold": 2600,
+          "boosters": {
+            "JUSTICE": 1
+          }
+        }
+      },
+      {
+        "setName": "Helix Prison",
+        "requiredMaterials": {
+          "Brilliant Prisons": 4,
+          "Helix Tubes": 5
+        },
+        "reward": {
+          "gold": 4700,
+          "boosters": {
+            "JUSTICE": 1,
+            "COMPASSION": 1
+          }
+        }
+      },
+      {
+        "setName": "Ancient Relics",
+        "requiredMaterials": {
+          "Chain of Keys": 2,
+          "Gormott Heads": 2,
+          "Lost Glyph Plates": 6
+        },
+        "reward": {
+          "gold": 6600,
+          "boosters": {
+            "JUSTICE": 1,
+            "COMPASSION": 1
+          }
+        }
+      },
+      {
+        "setName": "Trick Key Head",
+        "requiredMaterials": {
+          "Chain of Keys": 2,
+          "Gormott Heads": 2,
+          "Trick Mirrors": 6
+        },
+        "reward": {
+          "gold": 6600,
+          "boosters": {
+            "BRAVERY": 1,
+            "COMPASSION": 1
+          }
+        }
+      },
+      {
+        "setName": "Ancient Majesty",
+        "requiredMaterials": {
+          "Lost Glyph Plate": 1,
+          "Titanic Cranium": 1
+        },
+        "reward": {
+          "gold": 12800,
+          "boosters": {
+            "JUSTICE": 1,
+            "TRUTH": 1
+          }
+        }
+      },
+      {
+        "setName": "Prison Break Game",
+        "requiredMaterials": {
+          "Brilliant Prisons": 2,
+          "Morph Orbs": 2
+        },
+        "reward": {
+          "gold": 13400,
+          "boosters": {
+            "BRAVERY": 1,
+            "COMPASSION": 1
+          }
+        }
+      },
+      {
+        "setName": "Gormott Connector",
+        "requiredMaterials": {
+          "Bion Connectors": 4,
+          "Gormott Head": 1
+        },
+        "reward": {
+          "gold": 19900,
+          "boosters": {
+            "TRUTH": 1
+          }
+        }
+      },
+      {
+        "setName": "Art Set...?",
+        "requiredMaterials": {
+          "Helix Tubes": 5,
+          "Titanic Craniums": 2
+        },
+        "reward": {
+          "gold": 30600,
+          "boosters": {
+            "BRAVERY": 1,
+            "JUSTICE": 1
+          }
+        }
+      },
+      {
+        "setName": "Helix Orb",
+        "requiredMaterials": {
+          "Helix Tubes": 5,
+          "Morph Orbs": 4
+        },
+        "reward": {
+          "gold": 30600,
+          "boosters": {
+            "COMPASSION": 1,
+            "TRUTH": 1
+          }
+        }
+      },
+      {
+        "setName": "Bion Head Chain",
+        "requiredMaterials": {
+          "Bion Connectors": 6,
+          "Chain of Keys": 2,
+          "Gormott Heads": 2
+        },
+        "reward": {
+          "gold": 41200,
+          "boosters": {
+            "COMPASSION": 1,
+            "TRUTH": 1
+          }
+        }
+      },
+      {
+        "setName": "Fünf Set",
+        "requiredMaterials": {
+          "Ancient King's Tiara": 1,
+          "Brilliant Prisons": 5,
+          "Morph Orbs": 5,
+          "Stratospheric Hoop": 1,
+          "Titanic Craniums": 2
+        },
+        "reward": {
+          "gold": 120200,
+          "boosters": {
+            "JUSTICE": 1,
+            "TRUTH": 1
+          }
+        }
+      }
+    ]
+  }
+]

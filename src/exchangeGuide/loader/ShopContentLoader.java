@@ -1,11 +1,11 @@
-package ExchangeGuide.loader;
+package exchangeGuide.loader;
 
-import ExchangeGuide.data.Booster;
-import ExchangeGuide.data.Material;
-import ExchangeGuide.data.Recipe;
-import ExchangeGuide.data.Reward;
-import ExchangeGuide.data.Shop;
-import ExchangeGuide.data.ShopContent;
+import exchangeGuide.data.Booster;
+import exchangeGuide.data.Material;
+import exchangeGuide.data.Recipe;
+import exchangeGuide.data.Reward;
+import exchangeGuide.data.Shop;
+import exchangeGuide.data.ShopContent;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
@@ -15,6 +15,7 @@ import java.text.ParseException;
 import java.util.HashMap;
 import java.util.Locale;
 import java.util.Map;
+import java.util.TreeMap;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -73,7 +74,7 @@ public class ShopContentLoader {
      */
     private Map<Material, Integer> getMaterialsFromString(String string) {
         String[] materials = string.split("\n");
-        Map<Material, Integer> result = new HashMap<>();
+        Map<Material, Integer> result = new TreeMap<>();
         for (final String material : materials) {
             String[] materialTokens = material.split(" ", 2);
             result.put(

@@ -1,4 +1,6 @@
-package ExchangeGuide.data;
+package exchangeGuide.data;
+
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class Shop {
     public final String shopName;
@@ -15,8 +17,6 @@ public class Shop {
 
     @Override
     public String toString() {
-        return nation + " > " + area + " > " + shopName + "\n@" + filePath;
+        return nation + " > " + area + " > " + shopName + "\n@ " + filePath + "\n";
     }
-
-
 }

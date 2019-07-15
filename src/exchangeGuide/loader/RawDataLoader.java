@@ -1,6 +1,6 @@
-package ExchangeGuide.loader;
+package exchangeGuide.loader;
 
-import ExchangeGuide.data.Shop;
+import exchangeGuide.data.Shop;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.node.ObjectNode;

@@ -1,9 +1,10 @@
-package ExchangeGuide;
+package exchangeGuide;
 
-import ExchangeGuide.data.Shop;
-import ExchangeGuide.data.ShopContent;
-import ExchangeGuide.loader.RawDataLoader;
-import ExchangeGuide.loader.ShopContentLoader;
+import exchangeGuide.data.Shop;
+import exchangeGuide.data.ShopContent;
+import exchangeGuide.loader.RawDataLoader;
+import exchangeGuide.loader.ShopContentLoader;
+import exchangeGuide.indexer.ByShopIndexer;
 
 import java.util.List;
 import java.util.stream.Collectors;
@@ -21,6 +22,8 @@ public class Main {
                 .map(ShopContentLoader::new)                                            // build contentLoader
                 .map(ShopContentLoader::buildShopContent)                               // get recipes
                 .collect(Collectors.toList());                                          // collect to list
+        ByShopIndexer byShopIndexer = new ByShopIndexer(shopContents);
+        byShopIndexer.serialize();
         System.out.println("Program Finished.");
     }
 }

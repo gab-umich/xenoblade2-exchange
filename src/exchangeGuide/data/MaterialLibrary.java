@@ -1,4 +1,4 @@
-package ExchangeGuide.data;
+package exchangeGuide.data;
 
 public class MaterialLibrary {
 
