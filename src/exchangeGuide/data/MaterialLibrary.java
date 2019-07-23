@@ -1,5 +1,7 @@
 package exchangeGuide.data;
 
-public class MaterialLibrary {
+import java.util.TreeMap;
+
+public class MaterialLibrary extends TreeMap {
 
 }

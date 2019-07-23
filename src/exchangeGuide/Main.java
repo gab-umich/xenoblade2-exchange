@@ -2,6 +2,7 @@ package exchangeGuide;
 
 import exchangeGuide.data.Shop;
 import exchangeGuide.data.ShopContent;
+import exchangeGuide.indexer.ByMaterialIndexer;
 import exchangeGuide.loader.RawDataLoader;
 import exchangeGuide.loader.ShopContentLoader;
 import exchangeGuide.indexer.ByShopIndexer;
@@ -22,8 +23,12 @@ public class Main {
                 .map(ShopContentLoader::new)                                            // build contentLoader
                 .map(ShopContentLoader::buildShopContent)                               // get recipes
                 .collect(Collectors.toList());                                          // collect to list
+
         ByShopIndexer byShopIndexer = new ByShopIndexer(shopContents);
         byShopIndexer.serialize();
+
+        ByMaterialIndexer byMaterialIndexer = new ByMaterialIndexer(shopContents);
+        byMaterialIndexer.serialize();
         System.out.println("Program Finished.");
     }
 }

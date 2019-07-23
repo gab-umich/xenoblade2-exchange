@@ -2,30 +2,27 @@ package exchangeGuide.data;
 
 import com.fasterxml.jackson.annotation.JsonAutoDetect;
 
+import java.util.AbstractMap;
 import java.util.TreeSet;
 
 @JsonAutoDetect(fieldVisibility = JsonAutoDetect.Visibility.ANY)
-public class ShopContent {
-    private final Shop shop;
-    private TreeSet<Recipe> recipes;
+public class ShopContent extends AbstractMap.SimpleEntry<Shop, TreeSet<Recipe>> {
 
     /**
-     * Default constructor with a
-     * @param shop
+     * Default constructor.
      */
     public ShopContent(Shop shop) {
-        this.shop = shop;
-        recipes = new TreeSet<>();
+        super(shop, new TreeSet<>());
     }
     public Shop getShop() {
-        return shop;
+        return getKey();
     }
 
     public TreeSet<Recipe> getRecipes() {
-        return recipes;
+        return getValue();
     }
 
     public void addRecipe(Recipe recipe) {
-        recipes.add(recipe);
+        this.getValue().add(recipe);
     }
 }
