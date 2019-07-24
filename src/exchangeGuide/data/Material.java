@@ -1,14 +1,20 @@
 package exchangeGuide.data;
 
 import com.fasterxml.jackson.annotation.JsonValue;
+import exchangeGuide.algorithm.SingularInflector;
 
+import java.util.Arrays;
 import java.util.Objects;
+import java.util.stream.Collectors;
 
 public class Material implements Comparable<Material> {
     public final String name;
+    private static SingularInflector toSingularConverter = SingularInflector.getInstance();
 
     public Material(String name) {
-        this.name = name;
+        // for each word, convert to singular form if is a noun.
+        this.name = Arrays.stream(name.split(" ")).map(toSingularConverter::toSingular)
+                .collect(Collectors.joining(" "));
     }
 
     @Override
