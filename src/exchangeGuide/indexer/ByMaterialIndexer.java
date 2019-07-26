@@ -12,8 +12,9 @@ import java.util.TreeSet;
 
 public class ByMaterialIndexer extends Indexer<Material, TreeSet<Recipe>>{
 
+    // a demonstration of how to write borderline unreadable code.
     public ByMaterialIndexer(List<ShopContent> shopContents) {
-        super(shopContents, "./serialized/byMaterial.json");
+        super(shopContents, OUTPUT_DATA_PATH + "byMaterial.json");
         dataMap = new TreeMap<>();
         shopContents.forEach(
                 shopContent -> {

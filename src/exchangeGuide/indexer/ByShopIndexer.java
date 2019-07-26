@@ -12,7 +12,7 @@ import java.util.stream.Collectors;
 public class ByShopIndexer extends Indexer<Shop, TreeSet<Recipe>> {
 
     public ByShopIndexer(List<ShopContent> shopContents) {
-        super(shopContents, "./serialized/byShop.json");
+        super(shopContents, OUTPUT_DATA_PATH + "byShop.json");
         // build data map as a Shop -> TreeSet<Recipe> map.
         dataMap = shopContents.stream().collect(Collectors.toMap(
                 ShopContent::getShop,
