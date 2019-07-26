@@ -9,6 +9,7 @@ import java.util.List;
 import java.util.Map;
 
 public class Indexer<K, V> {
+    protected static final String OUTPUT_DATA_PATH = "./docs/_data/";
     protected final String TARGET_FILE_PATH;
     protected static final String FILE_CREATION_ERROR = "File %s creation not possible!";
     protected ObjectMapper objectMapper = new ObjectMapper();
