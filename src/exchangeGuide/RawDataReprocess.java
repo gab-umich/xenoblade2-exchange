@@ -1,4 +1,4 @@
-package ExchangeGuide;
+package exchangeGuide;
 
 public class RawDataReprocess {
 

@@ -11,6 +11,18 @@
       "area": "Torigoth",
       "nation": "Gormott Province",
       "fileName": "TorigothMasnachExchange.json"
+    },
+    {
+      "shopName": "Unita Trading",
+      "area": "Garfont Village",
+      "nation": "Kingdom of Uraya",
+      "fileName": "UnitaTrading.json"
+    },
+    {
+      "shopName": "Topsten Trading",
+      "area": "Goetuis Port",
+      "nation": "Indoline Praetorium",
+      "fileName": "TopstenTrading.json"
     }
   ],
   "rawDirectory": "raw/"
