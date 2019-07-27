@@ -7,6 +7,10 @@
     <title>Xenoblade Chronicals 2 Exchange Guide</title>
 </head>
 <body>
-    
+    <table>
+        {% tablerow shop in site.data.byShop %}
+          {{ shop }}
+        {% endtablerow %}
+    </table>
 </body>
 </html>
