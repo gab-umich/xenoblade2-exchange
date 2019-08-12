@@ -15,6 +15,15 @@ public class MaterialUsageLibrary extends AbstractMap.SimpleEntry<Material, Tree
     public MaterialUsageLibrary(Material material) {
         super(material, new TreeSet<>());
     }
+
+    public MaterialUsageLibrary(Material material, TreeSet<Recipe> recipes) {
+        super(material, recipes);
+    }
+
+    public MaterialUsageLibrary(AbstractMap.SimpleEntry<Material, TreeSet<Recipe>> entry) {
+        super(entry.getKey(), entry.getValue());
+    }
+
     public Material getMaterial() {
         return getKey();
     }

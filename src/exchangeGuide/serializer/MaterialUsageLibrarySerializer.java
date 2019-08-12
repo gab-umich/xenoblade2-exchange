@@ -3,29 +3,29 @@ package exchangeGuide.serializer;
 import com.fasterxml.jackson.core.JsonGenerator;
 import com.fasterxml.jackson.databind.SerializerProvider;
 import com.fasterxml.jackson.databind.ser.std.StdSerializer;
-import exchangeGuide.data.ShopContent;
+import exchangeGuide.data.MaterialUsageLibrary;
 
 import java.io.IOException;
 
-public class ShopContentSerializer extends StdSerializer<ShopContent> {
-    public ShopContentSerializer() {
+public class MaterialUsageLibrarySerializer extends StdSerializer<MaterialUsageLibrary> {
+    public MaterialUsageLibrarySerializer() {
         this(null);
     }
 
-    public ShopContentSerializer(Class<ShopContent> t) {
+    public MaterialUsageLibrarySerializer(Class<MaterialUsageLibrary> t) {
         super(t);
     }
 
     @Override
     public void serialize(
-            ShopContent shopContent,
+            MaterialUsageLibrary library,
             JsonGenerator jgen,
             SerializerProvider provider
     ) throws IOException
     {
         jgen.writeStartObject();
-        jgen.writeStringField("shop", shopContent.getShop().toString());
-        jgen.writeObjectField("recipes", shopContent.getRecipes());
+        jgen.writeStringField("material", library.getMaterial().toString());
+        jgen.writeObjectField("recipes", library.getRecipes());
         jgen.writeEndObject();
     }
 }

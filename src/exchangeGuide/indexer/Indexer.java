@@ -44,8 +44,8 @@ public class Indexer<T> {
         }
     }
 
-    private void serialize(Set<T> dataSet) {
-        serialize(dataSet, module);
+    public void serialize() {
+        serialize(data, module);
     }
 
 }
