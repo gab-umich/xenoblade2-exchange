@@ -12,15 +12,59 @@ layout: default
 </head>
 
 <body>
-    <h1>Find Salvaging Material by Shop</h1>
-    {% for shop in site.data.byShop %}
+    <h1>Find Sets to sell by Salvaged Material</h1>
+    {% for materialLib in site.data.byMaterial %}
+    <h4>{{ materialLib.material }}</h4>
     <table>
-        {% for set in shop %}
-        {{ set[setName] }}
-        {% endfor %}
+        <thead>
+            <tr>
+                <th>Set Name</th>
+                <th>Required Materials</th>
+                <th>Reward</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for recipe in materialLib.recipes %}
+            <tr>
+                <td>{{ recipe.setName }}</td>
+                <td>{{ recipe.requiredMaterials }}</td>
+                <td>Gold: {{ recipe.reward.gold }}G
+                    {% if recipe.reward.boosters != empty %}
+                    + Booster: {{ recipe.reward.boosters }}
+                    {% endif %}
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
     </table>
     {% endfor %}
-    <h1>Find Sets to sell by Salvaged Material</h1>
+
+    <h1>Find Salvaging Material by Shop</h1>
+    {% for shopContent in site.data.byShop %}
+    <h4>{{ shopContent.shop }}</h4>
+    <table>
+        <thead>
+            <tr>
+                <th>Set Name</th>
+                <th>Required Materials</th>
+                <th>Reward</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for recipe in shopContent.recipes %}
+            <tr>
+                <td>{{ recipe.setName }}</td>
+                <td>{{ recipe.requiredMaterials }}</td>
+                <td>Gold: {{ recipe.reward.gold }}G
+                    {% if recipe.reward.boosters != empty %}
+                    + Booster: {{ recipe.reward.boosters }}
+                    {% endif %}
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    {% endfor %}
 </body>
 
 </html>
