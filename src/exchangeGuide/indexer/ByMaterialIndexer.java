@@ -40,7 +40,7 @@ public class ByMaterialIndexer extends Indexer<MaterialUsageLibrary> {
                 );
         data = tempMap.entrySet().stream().map(
                 entry -> new MaterialUsageLibrary(entry.getKey(), entry.getValue())
-        ).collect(Collectors.toSet());
+        ).collect(Collectors.toCollection(TreeSet::new));
 
         module.addSerializer(MaterialUsageLibrary.class, new MaterialUsageLibrarySerializer());
     }

@@ -24,7 +24,7 @@ public class ShopContentSerializer extends StdSerializer<ShopContent> {
     ) throws IOException
     {
         jgen.writeStartObject();
-        jgen.writeStringField("shop", shopContent.getShop().toString());
+        jgen.writeStringField("shopName", shopContent.getShop().toString());
         jgen.writeObjectField("recipes", shopContent.getRecipes());
         jgen.writeEndObject();
     }
