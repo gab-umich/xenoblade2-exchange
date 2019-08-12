@@ -1,21 +1,24 @@
 package exchangeGuide.indexer;
 
+import com.fasterxml.jackson.databind.module.SimpleModule;
 import exchangeGuide.data.Material;
+import exchangeGuide.data.MaterialUsageLibrary;
 import exchangeGuide.data.Recipe;
 import exchangeGuide.data.ShopContent;
 
 import java.util.Collections;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.TreeMap;
 import java.util.TreeSet;
 
-public class ByMaterialIndexer extends Indexer<Material, TreeSet<Recipe>>{
+public class ByMaterialIndexer extends Indexer<MaterialUsageLibrary> {
 
     // a demonstration of how to write borderline unreadable code.
     public ByMaterialIndexer(List<ShopContent> shopContents) {
-        super(shopContents, OUTPUT_DATA_PATH + "byMaterial.json");
-        dataMap = new TreeMap<>();
+        super(shopContents, OUTPUT_DATA_PATH + "byMaterial.json", new SimpleModule());
+        Map<> meterialUsageMap = new HashMap<>();
         shopContents.forEach(
                 shopContent -> {
                     TreeSet<Recipe> recipes = shopContent.getRecipes();
@@ -24,11 +27,11 @@ public class ByMaterialIndexer extends Indexer<Material, TreeSet<Recipe>>{
                                 Map<Material, Integer> materials = recipe.getRequiredMaterials();
                                 materials.keySet().forEach(
                                         material -> {
-                                            if (dataMap.containsKey(material)) {
-                                                dataMap.get(material).add(recipe);
+                                            if () {
+                                                data.
                                             }
                                             else {
-                                                dataMap.put(material, new TreeSet<>(Collections.singletonList(recipe)));
+                                                data.put(material, new TreeSet<>(Collections.singletonList(recipe)));
                                             }
                                         }
                                 );
