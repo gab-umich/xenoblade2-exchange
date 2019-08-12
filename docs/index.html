@@ -1,16 +1,26 @@
+---
+layout: default
+---
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Xenoblade Chronicals 2 Exchange Guide</title>
 </head>
+
 <body>
+    <h1>Find Salvaging Material by Shop</h1>
+    {% for shop in site.data.byShop %}
     <table>
-        {% tablerow shop in site.data.byShop %}
-          {{ shop }}
-        {% endtablerow %}
+        {% for set in shop %}
+        {{ set[setName] }}
+        {% endfor %}
     </table>
+    {% endfor %}
+    <h1>Find Sets to sell by Salvaged Material</h1>
 </body>
+
 </html>
