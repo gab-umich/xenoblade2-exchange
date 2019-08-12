@@ -6,8 +6,8 @@ import java.util.AbstractMap;
 import java.util.TreeSet;
 
 @JsonAutoDetect(fieldVisibility = JsonAutoDetect.Visibility.ANY)
-public class ShopContent extends AbstractMap.SimpleEntry<Shop, TreeSet<Recipe>> {
-
+public class ShopContent extends AbstractMap.SimpleEntry<Shop, TreeSet<Recipe>>
+        implements Comparable<ShopContent> {
     /**
      * Default constructor.
      */
@@ -24,5 +24,10 @@ public class ShopContent extends AbstractMap.SimpleEntry<Shop, TreeSet<Recipe>> 
 
     public void addRecipe(Recipe recipe) {
         this.getValue().add(recipe);
+    }
+
+    @Override
+    public int compareTo(ShopContent o) {
+        return this.getShop().compareTo(o.getShop());
     }
 }

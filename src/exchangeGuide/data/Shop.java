@@ -1,7 +1,5 @@
 package exchangeGuide.data;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
-
 public class Shop implements Comparable<Shop> {
     public final String shopName;
     public final String area;
@@ -28,6 +26,6 @@ public class Shop implements Comparable<Shop> {
 
     @Override
     public String toString() {
-        return nation + " > " + area + " > " + shopName + "\n@ " + filePath + "\n";
+        return nation + " > " + area + " > " + shopName;
     }
 }
