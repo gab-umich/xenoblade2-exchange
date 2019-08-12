@@ -1,24 +1,19 @@
 package exchangeGuide.indexer;
 
-import exchangeGuide.data.Recipe;
-import exchangeGuide.data.Shop;
+import com.fasterxml.jackson.databind.module.SimpleModule;
 import exchangeGuide.data.ShopContent;
+import exchangeGuide.serializer.ShopContentSerializer;
 
 import java.util.List;
-import java.util.TreeMap;
 import java.util.TreeSet;
-import java.util.stream.Collectors;
 
-public class ByShopIndexer extends Indexer<Shop, TreeSet<Recipe>> {
+public class ByShopIndexer extends Indexer<ShopContent> {
 
     public ByShopIndexer(List<ShopContent> shopContents) {
-        super(shopContents, OUTPUT_DATA_PATH + "byShop.json");
+        super(shopContents, OUTPUT_DATA_PATH + "byShop.json", new SimpleModule());
+        // create the module to register the custom serializer with
+        module.addSerializer(ShopContent.class, new ShopContentSerializer());
         // build data map as a Shop -> TreeSet<Recipe> map.
-        dataMap = shopContents.stream().collect(Collectors.toMap(
-                ShopContent::getShop,
-                ShopContent::getRecipes,
-                (v1, v2) -> {throw new RuntimeException("Key Duplication happened when indexing shopContent by Shop");},
-                TreeMap::new
-        ));
+        data = new TreeSet<>(shopContents);
     }
 }

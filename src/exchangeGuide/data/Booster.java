@@ -5,6 +5,6 @@ public enum Booster {
 
     @Override
     public String toString() {
-        return "{} - Booster";
+        return "{} Booster";
     }
 }

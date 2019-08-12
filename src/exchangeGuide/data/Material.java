@@ -1,5 +1,6 @@
 package exchangeGuide.data;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonValue;
 import exchangeGuide.algorithm.SingularInflector;
 
@@ -9,6 +10,7 @@ import java.util.stream.Collectors;
 
 public class Material implements Comparable<Material> {
     public final String name;
+    @JsonIgnore
     private static SingularInflector toSingularConverter = SingularInflector.getInstance();
 
     public Material(String name) {
