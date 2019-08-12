@@ -14,7 +14,7 @@ layout: default
 <body>
     <h1>Find Sets to sell by Salvaged Material</h1>
     {% for materialLib in site.data.byMaterial %}
-    <h4>{{ materialLib.material }}</h4>
+    <h4>{{ materialLib.materialName }}</h4>
     <table>
         <thead>
             <tr>
@@ -25,13 +25,22 @@ layout: default
         </thead>
         <tbody>
             {% for recipe in materialLib.recipes %}
+            {% assign boosters = recipe.reward.boosters %}
             <tr>
                 <td>{{ recipe.setName }}</td>
                 <td>{{ recipe.requiredMaterials }}</td>
                 <td>Gold: {{ recipe.reward.gold }}G
-                    {% if recipe.reward.boosters != empty %}
-                    + Booster: {{ recipe.reward.boosters }}
-                    {% endif %}
+                    {%- if boosters != empty %}
+                    {%- for booster in boosters -%},<br />
+                        {{ booster.count }}
+                        {{ booster.boosterName }}
+                        {% if booster.count == 1 -%}
+                            Booster
+                        {%- else -%}
+                            Boosters
+                        {%- endif -%}
+                    {%- endfor -%}
+                    {%- endif -%}
                 </td>
             </tr>
             {% endfor %}
@@ -52,13 +61,22 @@ layout: default
         </thead>
         <tbody>
             {% for recipe in shopContent.recipes %}
+            {% assign boosters = recipe.reward.boosters %}
             <tr>
                 <td>{{ recipe.setName }}</td>
                 <td>{{ recipe.requiredMaterials }}</td>
                 <td>Gold: {{ recipe.reward.gold }}G
-                    {% if recipe.reward.boosters != empty %}
-                    + Booster: {{ recipe.reward.boosters }}
-                    {% endif %}
+                    {%- if boosters != empty %}
+                    {%- for booster in boosters -%},<br />
+                        {{ booster.count }}
+                        {{ booster.boosterName }}
+                        {% if booster.count == 1 -%}
+                            Booster
+                        {%- else -%}
+                            Boosters
+                        {%- endif -%}
+                    {%- endfor -%}
+                    {%- endif -%}
                 </td>
             </tr>
             {% endfor %}

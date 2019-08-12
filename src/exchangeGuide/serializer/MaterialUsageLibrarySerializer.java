@@ -24,7 +24,7 @@ public class MaterialUsageLibrarySerializer extends StdSerializer<MaterialUsageL
     ) throws IOException
     {
         jgen.writeStartObject();
-        jgen.writeStringField("material", library.getMaterial().toString());
+        jgen.writeStringField("materialName", library.getMaterial().toString());
         jgen.writeObjectField("recipes", library.getRecipes());
         jgen.writeEndObject();
     }

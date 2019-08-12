@@ -1,7 +1,11 @@
 package exchangeGuide.data;
 
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import exchangeGuide.serializer.RewardSerializer;
+
 import java.util.Map;
 
+@JsonSerialize(using = RewardSerializer.class)
 public class Reward {
     private final Integer gold;
     private final Map<Booster, Integer> boosters;
