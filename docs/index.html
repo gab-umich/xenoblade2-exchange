@@ -8,39 +8,54 @@ layout: default
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Xenoblade Chronicals 2 Exchange Guide</title>
+    <title>Xenoblade Chronicles 2 Exchange Guide</title>
 </head>
 
 <body>
-    <h1>Find Sets to sell by Salvaged Material</h1>
+    <h1>Find Sets to Sell by Salvaged Material</h1>
+    <h3>(Sorted on material name alphabetically, then by reward Gold from high to low)</h3>
     {% for materialLib in site.data.byMaterial %}
-    <h4>{{ materialLib.materialName }}</h4>
-    <table>
+    <h4 id="{{ materialLib.materialName }}">{{ materialLib.materialName }}</h4>
+    <table class="byMaterial">
         <thead>
             <tr>
                 <th>Set Name</th>
                 <th>Required Materials</th>
-                <th>Reward</th>
+                <th>Location</th>
+                <th>Rewards</th>
             </tr>
         </thead>
         <tbody>
-            {% for recipe in materialLib.recipes %}
-            {% assign boosters = recipe.reward.boosters %}
+            {%- for recipe in materialLib.recipes -%}
+            {%- assign materials = recipe.requiredMaterials -%}
+            {%- assign boosters = recipe.reward.boosters -%}
             <tr>
                 <td>{{ recipe.setName }}</td>
-                <td>{{ recipe.requiredMaterials }}</td>
-                <td>Gold: {{ recipe.reward.gold }}G
+                <td>
+                    <table>
+                        {% for materialPair in materials %}
+                        <tr><td>
+                            <a href="#{{ materialPair.materialName }}">{{ materialPair.materialName }}</a> ×{{ materialPair.count }}</td></tr>
+                        {% endfor %}
+                    </table>
+                </td>
+                <td>
+                    <a href="#{{ recipe.shopNation }} > {{ recipe.shopArea }} > {{ recipe.shopName }}">
+                        {{ recipe.shopNation }} > {{ recipe.shopArea }} > {{ recipe.shopName }}
+                    </a>
+                </td>
+                <td>
+                    Gold: {{ recipe.reward.gold }}G
                     {%- if boosters != empty %}
-                    {%- for booster in boosters -%},<br />
-                        {{ booster.count }}
-                        {{ booster.boosterName }}
+                    {%- for booster in boosters -%},<br />×
+                        {{ booster.count }} {{ booster.boosterName }}
                         {% if booster.count == 1 -%}
                             Booster
                         {%- else -%}
                             Boosters
                         {%- endif -%}
                     {%- endfor -%}
-                    {%- endif -%}
+                    {%- endif %}
                 </td>
             </tr>
             {% endfor %}
@@ -49,27 +64,36 @@ layout: default
     {% endfor %}
 
     <h1>Find Salvaging Material by Shop</h1>
+    <h3>(Sorted on in-game appearance order)</h3>
     {% for shopContent in site.data.byShop %}
-    <h4>{{ shopContent.shop }}</h4>
-    <table>
+    <h4 id="{{ shopContent.shopName }}">{{ shopContent.shopName }}</h4>
+    <table class="byShop">
         <thead>
             <tr>
                 <th>Set Name</th>
                 <th>Required Materials</th>
-                <th>Reward</th>
+                <th>Rewards</th>
             </tr>
         </thead>
         <tbody>
             {% for recipe in shopContent.recipes %}
+            {%- assign materials = recipe.requiredMaterials -%}
             {% assign boosters = recipe.reward.boosters %}
             <tr>
                 <td>{{ recipe.setName }}</td>
-                <td>{{ recipe.requiredMaterials }}</td>
+                <td>
+                    <table>
+                        {% for materialPair in materials %}
+                        <tr><td>
+                            <a href="#{{ materialPair.materialName }}">{{ materialPair.materialName }}</a> ×{{ materialPair.count }}
+                        </td></tr>
+                        {% endfor %}
+                    </table>
+                </td>
                 <td>Gold: {{ recipe.reward.gold }}G
                     {%- if boosters != empty %}
                     {%- for booster in boosters -%},<br />
-                        {{ booster.count }}
-                        {{ booster.boosterName }}
+                        {{ booster.count }} {{ booster.boosterName }}
                         {% if booster.count == 1 -%}
                             Booster
                         {%- else -%}

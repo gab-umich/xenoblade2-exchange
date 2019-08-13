@@ -1,0 +1,38 @@
+table.byMaterial {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+table.byShop {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+th {
+  text-align: center;
+}
+
+tr:hover {
+  background-color: #E7E7E7;
+}
+
+section.inner {
+  max-width: max-content;
+}
+
+a {
+  text-decoration: none !important;
+}
+
+footer a {
+  border-bottom: 1px solid;
+}
+
+a:hover {
+  border-bottom: 1px solid;
+}
+
+#main_content_wrap a:hover {
+  background: #A6D2F7;
+}
+
