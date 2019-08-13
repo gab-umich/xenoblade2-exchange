@@ -1,15 +1,11 @@
 package exchangeGuide.data;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
-
 import java.util.Map;
 
 public class Recipe implements Comparable<Recipe> {
     private final String setName;
     private final Map<Material, Integer> requiredMaterials;
     private final Reward reward;
-
-    @JsonIgnore
     private Shop availableAt;
 
     public Recipe(String setName, Map<Material, Integer> requiredMaterials, Reward reward, Shop availableAt) {
